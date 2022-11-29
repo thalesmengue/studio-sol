@@ -1,9 +1,10 @@
 <p align="center"><img src="studiosol.png" target="_blank" height="70">
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-## Sobre o teste
+# Desafio API de validação de senha
 
-Deveria ser produzida uma API para verificar se a senha recebida é válida baseada nas regras pedidas.
+## Desafio
+
+O desafio é a construção de uma API para verificar se a senha recebida é válida baseada nas seguintes regras:
 
 ● minSize: tem pelo menos x caracteres. <br>
 ● minUppercase: tem pelo menos x caracteres maiúsculos <br>
@@ -14,21 +15,25 @@ caracteres da seguinte string: "!@#$%^&*()-+\/{}[]" ) <br>
 ● noRepeted: não tenha nenhum caractere repetido em sequência ( ou seja, "aab" viola esta
 condição, mas "aba" não)
 
-### Para a criação da presente API, foi utilizada a linguagem de programação PHP, em conjunto com o Framework Laravel do PHP, um robusto framework, desenvolvido para a feitura de aplicações com a sintaxe mais elegante, seguindo o padrão MVC (Model, View e Controller).
+Caso a senha submetida não passe pelas validações acima, devem as validações que a senha não passou serem retornadas atribuidas a uma chave de nome "noMatch", e 
+uma chave de nome "verify" com o valor `false`. No entanto, caso a senha passe normalmente por todas as validações, a chave 
+"noMatch" deve ser retornada vazia, e a chave "verify" deve retornar o value `true`.
 
-*Para a criação das validações da senha recebida, utilizado a facade de validação do Laravel, no entanto, pelas
+## Resolução
+
+### Para a criação da API, foi utilizada a linguagem de programação PHP, em conjunto com o Framework Laravel do PHP, um robusto framework, desenvolvido para a feitura de aplicações com a sintaxe mais elegante, seguindo o padrão MVC (Model, View e Controller).
+
+*Para a criação das validações da senha recebida, utilizada a facade de validação do Laravel, no entanto, pelas
 validações padrões disponíveis serem limitadas, foi necessária a criação de novas regras de validação [Rules], às quais
 podem ser visualizadas na pasta ```app/rules```.*
 
-# Rotas
+## Rotas
 
 | Método HTTP | Endpoint  | Descrição                                     |
 |-------------|-----------|-----------------------------------------------|
 | POST        | `/verify` | Recebe a senha para ser validada pelas regras |
 
-# Para executar o projeto na sua máquina, siga os passos abaixo
-
-## os comandos devem ser executados via terminal, seja o da máquina ou o da IDE
+## Para executar o projeto na sua máquina, siga os passos abaixo
 
 ```
 # extraia o arquivo
@@ -37,6 +42,9 @@ podem ser visualizadas na pasta ```app/rules```.*
 
 # instale as dependências caso necessário
 $ composer install
+
+# copie o arquivo .env.example do projeto
+$ cp .env.example .env
 
 # execute o comando abaixo para que a API seja inicializada e possa ser utilizada
 $ php artisan serve
@@ -77,10 +85,15 @@ Se a validação que se tenta realizar falha, no caso os requisitos definidos n�
 
 Para rodar os testes feitos, é só utilizar no terminal o comando abaixo:
 
-```bash
+```
 php artisan test
 ```
 
+ou
+
+```
+vendor/bin/phpunit
+```
 
 ### Referências:
 
