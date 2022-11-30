@@ -25,7 +25,7 @@ class MinSpecialCharacters implements Rule
      */
     public function passes($attribute, $value): bool
     {
-        return 1 === preg_match('/[@$!%*#?&]/', $value);
+        return 1 === preg_match('(.*[\\[\\]~!^(){}<>%@#&$*+=_-])', $value);
     }
 
     /**

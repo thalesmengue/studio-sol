@@ -27,6 +27,19 @@ uma chave de nome "verify" com o valor `false`. No entanto, caso a senha passe n
 validações padrões disponíveis serem limitadas, foi necessária a criação de novas regras de validação [Rules], às quais
 podem ser visualizadas na pasta ```app/rules```.*
 
+## Rules
+
+Foram criadas cinco custom rules:
+
+* MinDigit: A senha deve conter ao menos um dígito.
+* MinLowercase: A senha deve conter ao menos uma letra minúscula.
+* MinUppercase: A senha deve conter ao menos uma palavra maiúscula.
+* MinSpecialCharacters: A senha deve conter ao menos um caractere especial.
+* NoRepeted: A senha não pode conter duas ou mais palavras repetidas em sequência.
+
+Também foi utilizado para a validação de mínimo de dígitos da senha uma das *validations* padrão do laravel, definindo
+um mínimo de 8 caracteres para a senha.
+
 ## Rotas
 
 | Método HTTP | Endpoint  | Descrição                                     |
@@ -43,14 +56,17 @@ podem ser visualizadas na pasta ```app/rules```.*
 # instale as dependências caso necessário
 $ composer install
 
-# copie o arquivo .env.example do projeto
-$ cp .env.example .env
-
 # execute o comando abaixo para que a API seja inicializada e possa ser utilizada
 $ php artisan serve
 ```
 
-Para verificar as validações realizadas pode ser acessada a rota ```/verify```, com o exemplo de envio de uma senha da seguinte maneira:
+Como no desafio não utilizado o armazenamento de informações no banco de dados, não é necessário a configuração das
+variáveis de ambiente do banco de dados no arquivo `.env`.
+
+<br>
+
+
+Para verificar as validações realizadas pode ser acessada a rota `/verify`, com o exemplo de envio de uma senha da seguinte maneira:
 ```bash
 {
   "password:" "alto123"
