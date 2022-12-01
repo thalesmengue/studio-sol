@@ -27,16 +27,15 @@ podem ser visualizadas na pasta ```app/rules```.*
 
 ## Rules
 
-Foram criadas cinco custom rules:
+Foram criadas três custom rules:
 
-* MinDigit: A senha deve conter ao menos um dígito.
 * MinLowercase: A senha deve conter ao menos uma letra minúscula.
 * MinUppercase: A senha deve conter ao menos uma palavra maiúscula.
-* MinSpecialCharacters: A senha deve conter ao menos um caractere especial.
 * NoRepeted: A senha não pode conter duas ou mais palavras repetidas em sequência.
 
-Também foi utilizado para a validação de mínimo de dígitos da senha uma das *validations* padrão do laravel, definindo
-um mínimo de 8 caracteres para a senha.
+Quanto as validações padrões disponíveis pelo Laravel, utilizada uma validação para restringir o número mínimo de caracteres da senha
+em 8, uma validação para assegurar que a senha deve conter uma letra, uma para assegurar que a senha deve conter ao menos um número e uma
+validação para assegurar que conterá um caractere especial ou símbolo.
 
 ## Rotas
 
@@ -78,8 +77,8 @@ com o envio da requisição POST com o exemplo acima, a resposta esperada deve s
 	"noMatch": {
 		"password": [
 			"The password must be at least 8 characters.",
-			"The password must contain at least one uppercase word.",
-			"The password must contain at least one special character."
+			"The password must contain at least one symbol.",
+			"The password must contain at least one uppercase letter."
 		]
 	}
 }

@@ -11,6 +11,7 @@ use App\Rules\NoRepeted;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rules\Password;
 use Symfony\Component\HttpFoundation\Response;
 
 class PasswordController extends Controller
@@ -19,12 +20,13 @@ class PasswordController extends Controller
     {
         $validated = Validator::make($request->only('password'), [
             'password' => [
-                'min: 8',
-                new MinDigit, // password must contain at least one digit
-                new MinLowercase, // password must contain at least one lowercase word
-                new MinUppercase, // password must contain at least one uppercase word
-                new MinSpecialCharacters, // password must contain at least one special character
-                new NoRepeted // password must not contain two repeated words
+                Password::min(8)
+                    ->letters()
+                    ->numbers()
+                    ->symbols(),
+                    new MinLowercase, // password must contain at least one lowercase word
+                    new MinUppercase, // password must contain at least one uppercase word
+                    new NoRepeted // password must not contain two repeated words
             ],
         ]);
 

@@ -35,6 +35,6 @@ class NoRepeted implements Rule
      */
     public function message(): string
     {
-        return 'The password must not contain two repeated characters in sequence';
+        return 'The password must not contain two repeated characters in sequence.';
     }
 }

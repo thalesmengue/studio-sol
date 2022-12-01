@@ -35,6 +35,6 @@ class MinUppercase implements Rule
      */
     public function message(): string
     {
-        return 'The password must contain at least one uppercase letter';
+        return 'The password must contain at least one uppercase letter.';
     }
 }

@@ -35,6 +35,6 @@ class MinLowercase implements Rule
      */
     public function message(): string
     {
-        return 'The password must contain at least one lowercase letter';
+        return 'The password must contain at least one lowercase letter.';
     }
 }

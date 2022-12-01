@@ -39,7 +39,7 @@ class PasswordControllerTest extends TestCase
             'verify' => false,
             'noMatch' => [
                 'password' => [
-                    0 => 'The password must contain at least one lowercase letter'
+                    0 => 'The password must contain at least one lowercase letter.'
                 ]
             ]
         ]);
@@ -59,7 +59,7 @@ class PasswordControllerTest extends TestCase
             'verify' => false,
             'noMatch' => [
                 'password' => [
-                    0 => 'The password must contain at least one uppercase letter'
+                    0 => 'The password must contain at least one uppercase letter.'
                 ]
             ]
         ]);
@@ -79,7 +79,7 @@ class PasswordControllerTest extends TestCase
             'verify' => false,
             'noMatch' => [
                 'password' => [
-                    0 => 'The password must contain at least one special character'
+                    0 => 'The password must contain at least one symbol.'
                 ]
             ]
         ]);
@@ -99,7 +99,7 @@ class PasswordControllerTest extends TestCase
             'verify' => false,
             'noMatch' => [
                 'password' => [
-                    0 => 'The password must contain at least one digit'
+                    0 => 'The password must contain at least one number.'
                 ]
             ]
         ]);
@@ -119,7 +119,7 @@ class PasswordControllerTest extends TestCase
             'verify' => false,
             'noMatch' => [
                 'password' => [
-                    0 => 'The password must not contain two repeated characters in sequence'
+                    0 => 'The password must not contain two repeated characters in sequence.'
                 ]
             ]
         ]);
