@@ -21,8 +21,6 @@ uma chave de nome "verify" com o valor `false`. No entanto, caso a senha passe n
 
 ## Resolução
 
-### Para a criação da API, foi utilizada a linguagem de programação PHP, em conjunto com o Framework Laravel do PHP, um robusto framework, desenvolvido para a feitura de aplicações com a sintaxe mais elegante, seguindo o padrão MVC (Model, View e Controller).
-
 *Para a criação das validações da senha recebida, utilizada a facade de validação do Laravel, no entanto, pelas
 validações padrões disponíveis serem limitadas, foi necessária a criação de novas regras de validação [Rules], às quais
 podem ser visualizadas na pasta ```app/rules```.*
