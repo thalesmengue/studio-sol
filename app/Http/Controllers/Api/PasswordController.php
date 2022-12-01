@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Rules\MinDigit;
 use App\Rules\MinLowercase;
-use App\Rules\MinSpecialCharacters;
 use App\Rules\MinUppercase;
 use App\Rules\NoRepeted;
 use Illuminate\Http\JsonResponse;
@@ -24,9 +22,9 @@ class PasswordController extends Controller
                     ->letters()
                     ->numbers()
                     ->symbols(),
-                    new MinLowercase, // password must contain at least one lowercase word
-                    new MinUppercase, // password must contain at least one uppercase word
-                    new NoRepeted // password must not contain two repeated words
+                new MinLowercase, // password must contain at least one lowercase word
+                new MinUppercase, // password must contain at least one uppercase word
+                new NoRepeted // password must not contain two repeated words
             ],
         ]);
 
