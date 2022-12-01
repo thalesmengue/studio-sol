@@ -3,6 +3,7 @@
 namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
+use Illuminate\Support\Str;
 
 class MinSpecialCharacters implements Rule
 {
@@ -19,13 +20,34 @@ class MinSpecialCharacters implements Rule
     /**
      * Determine if the validation rule passes.
      *
-     * @param  string  $attribute
-     * @param  mixed  $value
+     * @param string $attribute
+     * @param mixed $value
      * @return bool
      */
     public function passes($attribute, $value): bool
     {
-        return 1 === preg_match('(.*[\\[\\]~!^(){}<>%@#&$*+=_-])', $value);
+        $characters = [
+            '!',
+            '@',
+            '#',
+            '$',
+            '%',
+            '^',
+            '&',
+            '*',
+            '(',
+            ')',
+            '-',
+            '+',
+            '\\',
+            '/',
+            '{',
+            '}',
+            '[',
+            ']'
+        ];
+
+        return Str::contains($value, $characters);
     }
 
     /**
