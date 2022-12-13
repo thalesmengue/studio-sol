@@ -46,11 +46,10 @@ validação para assegurar que conterá um caractere especial ou símbolo.
 ## Para executar o projeto na sua máquina, siga os passos abaixo
 
 ```
-# extraia o arquivo
+# clone o repositório
+git clone git@github.com:thalesmengue/studio-sol.git
 
-# acesse a pasta do projeto pelo terminal ou pela IDE
-
-# instale as dependências caso necessário
+# instale as dependências
 $ composer install
 
 # execute o comando abaixo para que a API seja inicializada e possa ser utilizada
